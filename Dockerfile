@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
     ros-humble-ros-gz \
     ros-humble-urdf \
     ros-humble-xacro \
-    ros-humble-realsense2-camera \
-    ros-humble-realsense2-description
+    ros-humble-librealsense2*
 
 # Configurar rosdep para manejar dependencias
 RUN rosdep init || true && rosdep update
@@ -22,6 +21,12 @@ RUN mkdir -p src
 
 WORKDIR /ros2_ws/src
 RUN git clone https://github.com/inaki1111/detection.git
+RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros2-master
+
+
+
+
+
 
 
 WORKDIR /ros2_ws
