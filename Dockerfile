@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     ros-humble-ros-gz \
     ros-humble-urdf \
     ros-humble-xacro \
+    ros-humble-moveit\
     ros-humble-librealsense2*
 
 # Configurar rosdep para manejar dependencias
@@ -45,6 +46,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # Volver al home
 WORKDIR /root
+
 
 # Mantener el contenedor abierto
 CMD ["/bin/bash"]
